@@ -3,7 +3,6 @@ FROM debian:buster-slim AS build
 RUN apt-get update && apt-get -y --no-install-recommends install \
       build-essential git ca-certificates \
  && rm -rf /var/lib/apt/lists/*
-
 WORKDIR /build
 RUN git clone https://github.com/ashinn/chibi-scheme.git chibi --depth 1
 WORKDIR /build/chibi
