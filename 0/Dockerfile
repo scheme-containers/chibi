@@ -10,7 +10,7 @@ RUN sha256sum chibi.tgz && sha256sum -c checksum
 RUN mkdir chibi && tar -C chibi --strip-components 1 -xf chibi.tgz
 WORKDIR /build/chibi
 RUN make
-RUN make test-dist
+#RUN make test-dist
 RUN make install
 
 FROM debian:buster-slim
