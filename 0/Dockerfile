@@ -5,7 +5,7 @@ RUN apt-get update && apt-get -y --no-install-recommends install \
  && rm -rf /var/lib/apt/lists/*
 WORKDIR /build
 COPY checksum checksum
-ADD http://synthcode.com/scheme/chibi/chibi-scheme-0.8.0.tgz chibi.tgz
+ADD http://synthcode.com/scheme/chibi/chibi-scheme-0.9.1.tgz chibi.tgz
 RUN sha256sum chibi.tgz && sha256sum -c checksum
 RUN mkdir chibi && tar -C chibi --strip-components 1 -xf chibi.tgz
 WORKDIR /build/chibi
